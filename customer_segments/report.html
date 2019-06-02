@@ -13162,7 +13162,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -13219,7 +13219,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display a description of the dataset</span>
@@ -13361,7 +13361,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -13521,7 +13521,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Make a copy of the DataFrame, using the &#39;drop&#39; function to drop the given feature</span>
@@ -13612,7 +13612,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Produce a scatter matrix for each pair of features in the data</span>
@@ -13674,7 +13674,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
@@ -13690,7 +13690,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13829,7 +13829,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Scale the data using the natural logarithm</span>
@@ -13892,7 +13892,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the log-transformed sample data</span>
@@ -13998,7 +13998,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># For each feature find the data points with extreme high or low values</span>
@@ -14805,8 +14805,19 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>There are indeed a few data points(65, 66, 128 to name a few) that are considered outliers for more than one feature maybe because of the fact that these data point could be those big establishments or big retail stores who are spending a lot across multiple categories to fulfil their diverse needs.</li>
-<li>Removal of these datapoints would certainly help some of our non-supervised algorithms to define a collection of good tight bound clusters, but I feel that removing a datapoint leads to a missed information and there are other alternatives to their removal like adjusting their values equal to that of the outlier step. <ul>
+<li><p>There are indeed a few data points(65, 66, 128 to name a few) that are considered outliers for more than one feature maybe because of the fact that these data point could be those big establishments or big retail stores who are spending a lot across multiple categories to fulfil their diverse needs.</p>
+</li>
+<li><p>List of data points that are considered outliers for more than one feature:</p>
+<ul>
+<li>65 - Fresh, Frozen</li>
+<li>66 - Fresh, Delicatessen</li>
+<li>75 - Grocery, Detergents_Paper</li>
+<li>128 - Fresh, Delicatessen</li>
+<li>154 - Milk, Grocery, Delicatessen</li>
+</ul>
+</li>
+<li><p>Removal of these datapoints would certainly help some of our non-supervised algorithms to define a collection of good tight bound clusters, but I feel that removing a datapoint leads to a missed information and there are other alternatives to their removal like adjusting their values equal to that of the outlier step.</p>
+<ul>
 <li>e.g. if an outlier step is 2.5 and we have an outlier of 2.9, we can change it's value to 2.5 instead.</li>
 </ul>
 </li>
@@ -14839,7 +14850,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with the same number of dimensions as features</span>
@@ -14955,7 +14966,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display sample log-data after having a PCA transformation applied</span>
@@ -15058,7 +15069,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with only two dimensions</span>
@@ -15089,7 +15100,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display sample log-data after applying PCA transformation in two dimensions</span>
@@ -15171,7 +15182,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a biplot</span>
@@ -15188,13 +15199,13 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f487ad98d30&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f3fbcc990f0&gt;</pre>
 </div>
 
 </div>
@@ -15291,7 +15302,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Apply your clustering algorithm of choice to the reduced data </span>
@@ -15374,7 +15385,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the results of the clustering from implementation</span>
@@ -15423,7 +15434,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Inverse transform the centers</span>
@@ -15560,7 +15571,7 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the predictions</span>
@@ -15593,6 +15604,182 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">true_centers</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Segment 0</th>
+      <td>4414.0</td>
+      <td>8158.0</td>
+      <td>12750.0</td>
+      <td>1046.0</td>
+      <td>4636.0</td>
+      <td>1132.0</td>
+    </tr>
+    <tr>
+      <th>Segment 1</th>
+      <td>2822.0</td>
+      <td>2100.0</td>
+      <td>3142.0</td>
+      <td>875.0</td>
+      <td>514.0</td>
+      <td>364.0</td>
+    </tr>
+    <tr>
+      <th>Segment 2</th>
+      <td>9985.0</td>
+      <td>2198.0</td>
+      <td>2712.0</td>
+      <td>2213.0</td>
+      <td>358.0</td>
+      <td>793.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3366</td>
+      <td>5403</td>
+      <td>12974</td>
+      <td>4400</td>
+      <td>5977</td>
+      <td>1744</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14755</td>
+      <td>899</td>
+      <td>1382</td>
+      <td>1765</td>
+      <td>56</td>
+      <td>749</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2787</td>
+      <td>1698</td>
+      <td>2510</td>
+      <td>65</td>
+      <td>477</td>
+      <td>52</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15604,6 +15791,24 @@ Sample point 2 predicted to be in Cluster 1
 <li><p>This can also be verified from my answer above to Question 1.</p>
 </li>
 <li><p>As we can see from above, the predictions are also consistent with this.</p>
+</li>
+<li><p>Feature comparison b/w sample points and cluster center (I've printed out the feature tables for samples and cluster centers above):</p>
+<ul>
+<li>Sample point 0 - Cluster 0<ul>
+<li>As we can see from the feature tables above, both Segment 0 and Sample point 0 categories seems to be spending a lot on the Groceries section and these both categories also seems to be similar in terms of their expenditure for the rest of the products.</li>
+</ul>
+</li>
+<li>Sample point 1 - Cluster 2<ul>
+<li>As we can see from the tables above, both of these customer categories seems to be spending high on Fresh products and relatively less on other product categories.</li>
+</ul>
+</li>
+<li>Sample point 2 - Cluster 1<ul>
+<li>Similarly for this customer category, we can see some average expenditure on Fresh, Milk and Grocery products and they've spent relatively less on rest of the categories. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Using the feature comparison above and also from the list of predictions, I can say that my intuition about the categories of the sample points was more/less right.</p>
 </li>
 </ul>
 
@@ -15642,10 +15847,18 @@ Sample point 2 predicted to be in Cluster 1
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>By looking at various groups of customers that we have defined above, I can safely say that the change in delivery service will have a different impact on differnt categories of customers. e.g. <ul>
+<li><p>By looking at various groups of customers that we have defined above, I can safely say that the change in delivery service will have a different impact on differnt categories of customers. e.g.</p>
+<ul>
 <li>Segment 0 with large retail store may not be affected much with the change in delivery scheme as we can assume that it buys most of the products in bulk and will have its inventory which could easily accomodate this change.</li>
 <li>Segment 1 with small or local convenince store will be moderately impacted as they usually deals in small quantities and may not have an inventory to work with and could require the more flexible delivery scheme.</li>
 <li>Segment 2 with restuarant chains will be most impacted as they invest heavily on 'Fresh' products, which needs to be delivered on a daily basis for them to serve the best quality food to their customers.</li>
+</ul>
+</li>
+<li><p>Conducting A-B Tests:</p>
+<ul>
+<li>The wholesale distributor should try to pick some(maybe around 1/4th) random points from all the segments.</li>
+<li>It should then test its change in delivery service on these random points across segments and get the results or feedbacks.</li>
+<li>We can then test our theory, that the customers from segment 0 should respond positively to this change and the customers from segment 1 and 2 may incline towards the negative feedbacks.</li>
 </ul>
 </li>
 </ul>
@@ -15699,7 +15912,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display the clustering results based on &#39;Channel&#39; data</span>
