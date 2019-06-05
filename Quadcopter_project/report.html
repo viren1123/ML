@@ -13056,25 +13056,6 @@ ul.typeahead-list  > li > a.pull-right {
 .ansi-bold { font-weight: bold; }
 
     </style>
-<style type="text/css">
-    body[data-notebook-name] > #header #header-container:not(.show-panel), /* body has data-notebook-name attribute when 
-a notebook is open. this rule won't be applied when the notebook is not open (in 404 view for example) */
-body[data-notebook-name] #menubar-container #maintoolbar:not(.show-panel),
-body[data-notebook-name] #menubar-container ul.navbar-nav:not(.show-panel) {
-  display: none;
-}
-
-#menubar.only-panel #menus.navbar-default {
-    background: #fff;
-    border-color: #fff;
-}
-
-.toolbar.with-statusbar{
-    margin-top: 3px;
-    margin-bottom: 0;
-}
-
-    </style>
 
 
 <style type="text/css">
@@ -13770,7 +13751,10 @@ div#notebook {
 <li>I have used the same sample task provided (take-off) so that I could compare my performance with the sample agent.</li>
 <li>Reward Function:<ul>
 <li>I tried executing the episodes initally with the same reward function which was given in the sample task but had to tweak it a bit because I wasn't getting a good performance out of my agent.</li>
-<li>I used a bit of scaling and tanh function to bound my reward element values withing the range of -1 and 1. </li>
+<li>I used a bit of scaling and tanh function to bound my reward element values withing the range of -1 and 1.</li>
+<li>I tried to give more weightage to the z-axis in position than the the other two xy axis to keep the agent more upright.</li>
+<li>I tried introducing the penalty for agent in case it moves away from it's target and even that didn't work out well.</li>
+<li>The current function of calculating the absolute difference between the agent position and the target position and applying tanh to get a value between -1 and 1 for all dimensions and adding these values in the end, is the one which is giving me the best results.</li>
 </ul>
 </li>
 </ul>
